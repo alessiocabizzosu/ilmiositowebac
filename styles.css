@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.header {
+    background-color: blanchedalmond;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    border-right: 1px solid black;
+    text-decoration: none;
+}
+
+.header ul a:hover {
+    background-color: blanchedalmond;
+}
+
+.header .logo {
+    float: left;
+    padding: 10px 20px;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    border: 1px solid black;
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background-color: rgb(0, 0, 0);
+    display: block;
+    width: 18px;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before,
+.header .menu-icon .nav-icon::after {
+    background-color: black;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: .2s all ease-out;
+    position: absolute;
+}
+
+.header .menu-icon .nav-icon::before {
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon::after {
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background-color: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}  
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+  
+ul {
+    list-style-type: none;
+    }
+
+.article-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-container_homepage {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color:#ffcc8e;
+    padding: 5px;
+}
+
+.content-container_servizi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#ffcc8e;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 70px;
+}
+
+.content-container_curriculum {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#ffcc8e;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 70px;
+}
+
+.content-container_bio {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  background-image: url("images/background-consulting.png");
+  height: 680px;
+  padding-top: 80px;
+}
+
+.content-container_form {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color:#ffcc8e;
+    padding: 5px;
+}
+
+.profile-image  {
+  display: flex;
+  height: 400px;
+  padding: 1px;
+  border: 2px solid #dd710cc7;
+  border-radius: 100%;
+}
+
+.personal-description {
+  display: flex;
+  justify-content:space-around;
+  text-align: justify;
+  background-color:#ffcc8e;
+  height: 450px;
+  width: 600px;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  border: 2px solid #dd710cc7;
+}
+
+.service_block  {
+  border: 1px solid #fff;
+  background-color: rgb(255, 173, 90);
+  width: 400px;
+  height: 400px;
+  text-align: center;
+}
+
+.curriculum_block  {
+  border: 1px solid #fff;
+  background-color: rgb(255, 173, 90);
+  width: 800px;
+  height: 400px;
+  text-align: left;
+}
+
+.contact-form-header {
+  text-align: center;
+  background-color: #ffcc8e;
+}
+
+.contact-form {
+  background-color: #ffcc8e;
+}
+
+.contact-form-header h1 {
+  font-size: 30px;
+}
+
+.form-row {
+  display: flex;
+  justify-content:left;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-row input[type='text'],
+.form-row input[type='email'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.form-row label {
+  margin-bottom: 15px;
+}
+
+.footer {
+  display: flex;
+  background-color:blanchedalmond;
+  height: auto;
+  width: 100%;
+}
+
+/*OTTIMIZZAZIONE PER ALTRI DISPOSITIVI*/
+
+/*Homepage-DESKTOP*/
+
+@media only screen and (min-width: 759px) {
+.article-image {
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+}
+
+/*Homepage-MOBILE*/
+
+@media only screen and (max-width: 760px) {
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+}
+
+/*Media Queries per Menù Sticky*/
+
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 20px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: 240px;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+/*Media Queries per Descrizione personale*/
+
+@media only screen and (max-width: 760px) {
+  .content-container_bio {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  }
+  
+  .profile-image{
+    display: block;
+    height: 250px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .personal-description{
+    display: block;
+    width: 90%;
+    height: auto;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+}
+
+/*Media Queries per servizi*/
+
+@media only screen and (max-width: 760px) {
+  .content-container_servizi{
+    flex-direction: column;
+    height: auto;
+    padding: 120px;
+  }
+
+  .service_block{
+    margin-top: 20px;
+  }
+}
+
+/*Media Queries per CV*/
+
+@media only screen and (max-width: 760px) {
+  .content-container_curriculum {
+    flex-direction: column;
+    height: auto;
+    padding: 120px;
+  }
+
+  .curriculum_block{
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/*Media Queries per Form di contatto*/
+
+@media only screen and (min-width: 700px) {
+  .contact-form-header,
+  .contact-form {
+    width: 600px;
+  }
+  .form-row {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .form-row input[type='text'],  
+  .form-row input[type='email'],   
+  .form-row select,               
+  .form-row textarea {              
+    width: 250px;
+    height: initial;
+  }
+  .form-row label {
+    text-align: right;
+    width: 120px;
+    margin-top: 7px;
+    padding-right: 20px;
+  }
+}
+
+/*Carosello con Bootstrap*/
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
